@@ -1,0 +1,38 @@
+local CollectionService = game:GetService("CollectionService");
+local G2L = {};
+
+-- Players.jone_kurama11caldas.PlayerGui.ScreenGui
+G2L["ScreenGui_1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["ScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+-- Tags
+CollectionService:AddTag(G2L["ScreenGui_1"], [[main]]);
+
+-- Players.jone_kurama11caldas.PlayerGui.ScreenGui.ImageButton
+G2L["ImageButton_2"] = Instance.new("ImageButton", G2L["ScreenGui_1"]);
+G2L["ImageButton_2"]["BorderSizePixel"] = 0;
+G2L["ImageButton_2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+-- G2L["ImageButton_2"]["BackgroundTransparency"] = 1; -- Removido para manter o fundo sólido
+G2L["ImageButton_2"]["Image"] = [[rbxassetid://77738826610949]];
+G2L["ImageButton_2"]["Size"] = UDim2.new(0, 32, 0, 32);
+G2L["ImageButton_2"]["Position"] = UDim2.new(0, 336, 0, -56);
+
+-- Players.jone_kurama11caldas.PlayerGui.ScreenGui.ImageButton.UICorner
+G2L["UICorner_3"] = Instance.new("UICorner", G2L["ImageButton_2"]);
+G2L["UICorner_3"]["CornerRadius"] = UDim.new(1, 0);
+
+-- Players.jone_kurama11caldas.PlayerGui.ScreenGui.ImageButton.LocalScript
+G2L["LocalScript_4"] = Instance.new("LocalScript", G2L["ImageButton_2"]);
+
+-- Players.jone_kurama11caldas.PlayerGui.ScreenGui.ImageButton.LocalScript
+local function C_4()
+	local script = G2L["LocalScript_4"];
+	local imageButton = script.Parent;
+
+	imageButton.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://pastebin.com/VG5XtLPF"))();
+	end);
+end;
+task.spawn(C_4);
+
+return G2L["ScreenGui_1"], require;
